@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="icon" href="https://media2.giphy.com/media/u9cnwsBi2nRpjPy7pT/giphy.gif?cid=6c09b952gl0pc1gketeyvnzjde2c38be4x37ibk6yi99bi55&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s">
+        <script>
+            // Shows corresponding toast based on user response
+            document.addEventListener('DOMContentLoaded', function() {
+                // Correct choice clicked
+                const correctTriggers = document.querySelectorAll('.correct');
+                const toastCorrect = document.getElementById('correctToast');
+                correctTriggers.forEach(trigger => {
+                    if (trigger) {
+                        trigger.addEventListener('click', () => {
+                            const toast = new bootstrap.Toast(toastCorrect)
+                            toast.show()
+                        })
+                    }
+                })
+                // Incorrect choice clicked
+                const incorrectTriggers = document.querySelectorAll('.incorrect')
+                const toastIncorrect = document.getElementById('incorrectToast')
+                incorrectTriggers.forEach(trigger => {
+                    if (trigger) {
+                        trigger.addEventListener('click', () => {
+                            const toast = new bootstrap.Toast(toastIncorrect)
+                            toast.show()
+                        })
+                    }
+                })
+            });
+        </script>
+        <title>Hanjing's Mini Quiz!</title>
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://media2.giphy.com/media/u9cnwsBi2nRpjPy7pT/giphy.gif?cid=6c09b952gl0pc1gketeyvnzjde2c38be4x37ibk6yi99bi55&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="logo" width="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="books.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="places.html">Places</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="quiz.html">Mini-Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Description-->
+        <figure class="text-center mytext">
+            <h1 class="display-3" id = "page-title">Mini-Quiz</h1>
+            <h5>
+                Now that you've (hopefully) learned a little bit more about me, try and see if you can answer the following
+                few questions correctly! All of them can be found by looking through the pages of this website. Check the
+                bottom right corner for live feedback!
+            </h5>
+       </figure>
+
+       <!--Questions-->
+       <div class="text-center mytext">
+            <div class="row align-items-start mx-auto">
+                <div class="col-6">
+                    <h6>Which city in China am I from?</h6>
+                    <button class="btn mybutton mb-2 incorrect">Beijing</button>
+                    <button class="btn mybutton mb-2 correct" >Shanghai</button>
+                    <button class="btn mybutton mb-2 incorrect">Shenzhen</button>
+                    <button class="btn mybutton mb-2 incorrect">Nanjing</button>
+                </div>
+                <div class="col-6">
+                    <h6>What concentration am I thinking of studying?</h6>
+                    <button class="btn mybutton mb-2 incorrect">Computer Science</button>
+                    <button class="btn mybutton mb-2 incorrect" >Statistics</button>
+                    <button class="btn mybutton mb-2 correct">Applied Mathematics</button>
+                    <button class="btn mybutton mb-2 incorrect">Electrical Engineering</button>
+                </div>
+            </div>
+            <br>
+            <div class="row align-itmes-start mx-auto">
+                <div class="col-6">
+                    <h6>Which of these is <i>not</i> one of my favorite books?</h6>
+                    <button class="btn mybutton mb-2 correct">Verity</button>
+                    <button class="btn mybutton mb-2 incorrect" >This is How You Lose the Time War</button>
+                    <button class="btn mybutton mb-2 incorrect">Freakonomics</button>
+                    <button class="btn mybutton mb-2 incorrect">On Earth We're Briefly Gorgeous</button>
+                </div>
+                <div class="col-6">
+                    <h6>Which of these genres did I <i>not</i> include in my favorite books list?</h6>
+                    <button class="btn mybutton mb-2 correct">Biography</button>
+                    <button class="btn mybutton mb-2 incorrect" >Literary fiction</button>
+                    <button class="btn mybutton mb-2 incorrect">Poetry</button>
+                    <button class="btn mybutton mb-2 incorrect">Short stories collection</button>
+                </div>
+            </div>
+            <br>
+            <div class="row align-items-start mx-auto">
+                <div class="col-6">
+                    <h6>Which city/area did I visit in Korea this year?</h6>
+                    <button class="btn mybutton mb-2 incorrect">Seoul</button>
+                    <button class="btn mybutton mb-2 correct" >Jeju</button>
+                    <button class="btn mybutton mb-2 incorrect">Busan</button>
+                    <button class="btn mybutton mb-2 incorrect">Incheon</button>
+                </div>
+                <div class="col-6">
+                    <h6>Which country in Asia have I <i>not</i> been to?</h6>
+                    <button class="btn mybutton mb-2 incorrect">Japan</button>
+                    <button class="btn mybutton mb-2 incorrect" >Singapore</button>
+                    <button class="btn mybutton mb-2 incorrect">Malaysia</button>
+                    <button class="btn mybutton mb-2 correct">Indonesia</button>
+                </div>
+            </div>
+       </div>
+
+       <!--Toast-->
+       <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="correctToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1000">
+                <div class="toast-body">
+                    Correct!
+                </div>
+            </div>
+       </div>
+       <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="incorrectToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1000">
+                <div class="toast-body">
+                    Incorrect
+                </div>
+            </div>
+       </div>
+
+    </body>
+</html>

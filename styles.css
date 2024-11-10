@@ -1,0 +1,65 @@
+/* Some aesthetic changes */
+::selection
+{
+    background: #839c84;
+}
+.mytext
+{
+    font-family: "Gill Sans", san-serif;
+    margin: 50px;
+}
+.mybutton
+{
+    background-color: #9dba9a;
+}
+.bookshelf
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#page-title
+{
+    background-color: #9dba9a;
+    padding: 8px;
+    display: inline-block;
+}
+
+/* Some functional changes for image gallery */
+.picture img
+{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.picture img:hover
+{
+    opacity: 1;
+}
+.gallery:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+.img-container
+{
+    position: relative;
+    display: none;
+}
+#img-text
+{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    background-color:black;
+    font-family: "Gill Sans", san-serif;
+    font-size: 20px;
+}
+.close-btn
+{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
